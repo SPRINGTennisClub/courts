@@ -6,7 +6,7 @@
 </head>
 <body>
     <h4>Liste des courts</h4>
-    <a href="http://localhost:8081/showAddCourt">Ajouter un court</a>
+    <a href="http://localhost:8082/showAddCourt">Ajouter un court</a>
     <br/><br/>
     <div>
         <table border="1">
@@ -20,12 +20,18 @@
                 <td th:utext="${court.couvert}">...</td>
                 <td th:utext="${court.typeSurface}">...</td>
                 <td>
-                    <form action="#" th:action="@{http://localhost:8081/removeCourt/} + ${{court.numCourt}}" th:method="delete">
+                    <form action="#" th:action="@{http://localhost:8083/bookCourt/} + ${{court.numCourt}}" th:method="put">
+                        <button type="submit">Réserver ce Court</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="#" th:action="@{http://localhost:8082/removeCourt/} + ${{court.numCourt}}" th:method="delete">
                         <button type="submit">Supprimer ce Court</button>
                     </form>
                 </td>
             </tr>
         </table>
     </div>
+    <a href="http://localhost:8080/clubInterface">Retour à la page d'accueil</a>
 </body>
 </html>

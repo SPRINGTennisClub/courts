@@ -36,4 +36,9 @@ public class ViewController {
     courtService.removeCourt(numCourt);
     return "courtList";
   }
+
+  @PutMapping("/bookCourt/{numCourt}")
+  public String bookCourt(@PathVariable int numCourt){
+    return "courtList";
+  }
 }
