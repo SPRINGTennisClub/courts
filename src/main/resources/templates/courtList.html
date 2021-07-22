@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation des Courts</title>
+</head>
+<body>
+    <h4>Liste des courts</h4>
+    <a href="http://localhost:8081/showAddCourt">Ajouter un court</a>
+    <br/><br/>
+    <div>
+        <table border="1">
+            <tr>
+                <th>Numero</th>
+                <th>Couvert</th>
+                <th>Type de Surface</th>
+            </tr>
+            <tr th:each ="court : ${courts}">
+                <td th:utext="${court.numCourt}">...</td>
+                <td th:utext="${court.couvert}">...</td>
+                <td th:utext="${court.typeSurface}">...</td>
+                <td>
+                    <form action="#" th:action="@{http://localhost:8081/removeCourt/} + ${{court.numCourt}}" th:method="delete">
+                        <button type="submit">Supprimer ce Court</button>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

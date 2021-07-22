@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouveau Court</title>
+</head>
+<body>
+<h1>Ajouter un court</h1>
+
+<form th:action="@{/addCourt}"
+      th:object="${court}" method="POST">
+    <ul>
+        <li>
+            Numero:
+            <input type="text" th:field="*{numCourt}" />
+            <br/>
+        </li>
+        <li>
+            Couvert:
+            <input type="text" th:field="*{couvert}" />
+            <br/>
+        </li>
+        <li>
+            Type de Surface:
+            <input type="text" th:field="*{typeSurface}" />
+            <br/>
+        </li>
+        <input type="submit" value="ajouter" />
+    </ul>
+</form>
+
+<br/>
+</body>
+</html>

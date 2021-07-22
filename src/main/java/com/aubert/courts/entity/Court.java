@@ -14,13 +14,13 @@ public class Court {
     @Id
     private int numCourt;
     @Column
-    private boolean estCouvert;
+    private boolean couvert;
     @Column
     private String typeSurface;
 
-    public Court(int numCourt, boolean estCouvert, String typeSurface) {
+    public Court(int numCourt, boolean couvert, String typeSurface) {
         this.numCourt = numCourt;
-        this.estCouvert = estCouvert;
+        this.couvert = couvert;
         this.typeSurface = typeSurface;
     }
 }
