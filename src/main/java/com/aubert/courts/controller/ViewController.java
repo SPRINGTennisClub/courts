@@ -34,6 +34,6 @@ public class ViewController {
   @DeleteMapping("/removeCourt/{numCourt}")
   public String removeCourt(@PathVariable int numCourt) {
     courtService.removeCourt(numCourt);
-    return "courtList";
+    return "redirect:/courtList";
   }
 }
